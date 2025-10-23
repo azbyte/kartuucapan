@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  <meta name="description" content="HTML HBD.id">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link href="https://feeldreams.github.io/heihbd/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
+  <title>Kakak Ranny</title>
+  <link rel="icon" type="image/x-icon" href="ultah-removebg-preview.png">
+</head>
+<body>
+
+  <!-- Ganti Audio di sini -->
+  <audio src="monokrom.webm" id="linkmp3" class="sembunyi"></audio>
+   
+  <div id="bodyblur">
+    <!-- Wallpaper --><img src="sakura2.png" id="wallpaper"/><div id="beneranblur"></div>
+  </div>
+   
+  <div id='Content'>
+
+    <div id="kadoIn">
+      <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png"/>
+    </div>
+    <p id="ket">Klik Kadonya!</p>
+
+    <div class="kumpulanstiker">
+      <!-- Stiker untuk Konten -->
+      <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker"/>
+      <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1"/>
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2"/>
+      <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker3"/>
+      <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker5"/>
+      
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker6"/>
+    </div>
+    
+    <p id="halo" class="halo"></p>
+    
+    <div>
+      <blockquote id='bq' data-text='㋡'>
+        <p id="kalimat">Aku Ada Sesuatu Nih</p>
+        <p id="pesan1">Klik 4 LOVE di Bawah!</p>
+        <div id="kolombaru">
+          <li id="lv1">🤍</li>
+          <li id="lv2">🤍</li>
+          <li id="lv3">🤍</li>
+          <li id="lv4">🤍</li>
+        </div>
+        <p id="pesan2">Tunggu...</p>
+        <!-- Pesan dengan delay; awalnya opacity 0 -->
+        <p id="pesan3" style="opacity:0;">Ciee.. Ada yang Udah Keterima Magang Nihh</p>
+        <p id="pesan4">Semangaaaat </p>
+        <p id="pesan5" class="gaya2">Terima kasih untuk semua ilmunya ya kak</p>
+        <p id="pesan6" class="gaya2">Semoga perjalan kakak selanjutnya penuh kebahagiaan</p>
+        <p id="pesan7" class="gaya2">Jaga kesehatan ya!</p>
+        <p id="pesan8" class="gaya2">Canda wkwwk :v</p>
+        <p id="pesan9" class="gaya2">Oh iya, kakak jangan lupain aku yaa. klo mau main roblox chat aja 😊</p>
+        <p id="pesan10" class="gaya2">@azbyt2</p>
+        <!-- Tombol Lanjut -->
+        <p id="opsL">Klik untuk Lanjut</p>
+      </blockquote>
+    </div>
+
+    <!-- Tombol Kirim Pesan -->
+    <div id="Tombol"><a id="By">&#128140; Lanjut</a></div>
+
+    <!-- Pesan Tambahan -->
+    <p id="katatambahan" class="sembunyi">Gajadi deh soalnya perpisahan ini terlalu mendadak 😜</p>
+
+    <!-- Pesan Ditolak -->
+    <div id="pesanditolak">
+      <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
+      <p id="kataditolak">Yaudah sii kalo ga mau, aku juga ga maksa</p>
+    </div>
+
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const swalst = Swal.mixin({
+      timer: 2300,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      timerProgressBar: true,
+      imageHeight: 90,
+    });
+    audio = new Audio('' + linkmp3.src);
+    ftganti = 0; fungsi = 0; fungsiAwal = 0; deffotostiker = fotostiker.src;
+    function berjatuhan() {
+      const heart = document.createElement("div");
+      heart.className = "fas fa-snowflake";
+      heart.style.left = (Math.random() * 90) + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      body.appendChild(heart);
+    }
+    setInterval(function() {
+      var heartArr = document.querySelectorAll(".fa-snowflake");
+      if (heartArr.length > 100) { heartArr[0].remove(); }
+    }, 100);
+    Content.style = "opacity:1;margin-top:16vh";
+    const swals = Swal.mixin({
+      allowOutsideClick: false,
+      cancelButtonColor: '#FF0040',
+      imageHeight: 80,
+    });
+    
+    document.getElementById("kadoIn").onclick = function() {
+      if (fungsiAwal == 0) {
+        audio.play();
+        window.nama = "Kak Ranny";
+        vketikhalo = "Hai, Kak Ranny ✨";
+        fungsiAwal = 1;
+        kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0";
+        wallpaper.style = "transform: scale(1.5);";
+        ket.style = "display:none";
+        setTimeout(initengahan, 300);
+        setTimeout(mulainama, 500);
+      }
+    }
+    
+    async function inipesan() {
+      var { value: nama } = await swals.fire({
+        title: 'Masukin Nama Kamu', input: 'text',
+      });
+      if (nama && nama.length < 11) {
+        window.nama = nama;
+        vketikhalo = "Hai, " + nama + " ✨";
+        mulainama();
+      } else {
+        await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');
+        inipesan();
+      }
+    }
+    
+    //Variable Pertanyaan Akhir
+    var tanya = 'Mau Kado Gak Nih? 😶';
+    var opstanya = 'Ayo jawab 😆';
+    var tompositif = 'Mau';
+    var tomnegatif = 'Engga';
+      
+    async function menuju() {
+      pesanwhatsapp = "Makasii udah ngucapin Kak Ranny ultah ><";
+      await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');
+      window.location = "https://api.whatsapp.com/send?phone=6285156071822&text=wahhh, terimakasih banget abagnku yang tampan."+ pesanwhatsapp;
+    }
+  </script>
+  <script src="https://malasid.github.io/html/hbd.js"></script>
+  <!-- Added script: Delay pesan dan pengaturan tombol dengan jarak tambahan -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Delay untuk menampilkan pesan "Ciee.. Ada yang Ultah Nih"
+      var pesan3 = document.getElementById("pesan3");
+      setTimeout(function(){
+        pesan3.style.transition = "opacity 1s";
+        pesan3.style.opacity = 1;
+      }, 5000); // penundaan 3 detik
+      
+      // Atur posisi tombol agar sejajar dan beri jarak (misalnya agar teks "Ayo jawab" tidak terlalu dempet dengan tombol)
+      var interval = setInterval(function() {
+        var buttons = document.querySelectorAll("button");
+        var btnMau, btnEngga;
+        buttons.forEach(function(btn) {
+          if (btn.textContent.trim() === tompositif) {
+            btnMau = btn;
+          }
+          if (btn.textContent.trim() === tomnegatif) {
+            btnEngga = btn;
+          }
+        });
+        if (btnMau && btnEngga) {
+          // Tetapkan posisi absolute dan posisi awal dengan satuan persen agar responsif
+          btnMau.style.position = "absolute";
+          btnEngga.style.position = "absolute";
+          // Tempatkan tombol secara sejajar dengan jarak dari teks pilihan (misalnya top: 85%)
+          btnEngga.style.left = "20%";
+          btnEngga.style.top = "85%";
+          btnMau.style.left = "60%";
+          btnMau.style.top = "85%";
+
+          // Set id untuk tombol agar script terakhir dapat mengaksesnya
+          btnMau.id = "btnMau";
+          btnEngga.id = "btnEngga";
+
+          // Tambahkan event listener untuk tombol Mau menghindar dengan cepat dan terus menerus
+          let isMoving = false;
+          btnMau.addEventListener('mouseenter', function() {
+            if (isMoving) return; // Hindari multiple triggers
+            isMoving = true;
+            const moveAway = () => {
+              // Dapatkan posisi tombol Engga
+              const enggaRect = btnEngga.getBoundingClientRect();
+              const viewportWidth = window.innerWidth;
+              const viewportHeight = window.innerHeight;
+
+              // Area aman: hindari area sekitar tombol Engga (misal 50px buffer)
+              const buffer = 50;
+              const safeLeftMin = 0;
+              const safeLeftMax = viewportWidth - btnMau.offsetWidth;
+              const safeTopMin = 0;
+              const safeTopMax = viewportHeight - btnMau.offsetHeight;
+
+              // Hindari area Engga
+              let newLeft, newTop;
+              let attempts = 0;
+              do {
+                newLeft = Math.random() * (safeLeftMax - safeLeftMin) + safeLeftMin;
+                newTop = Math.random() * (safeTopMax - safeTopMin) + safeTopMin;
+                attempts++;
+              } while (
+                (newLeft + btnMau.offsetWidth > enggaRect.left - buffer &&
+                 newLeft < enggaRect.right + buffer &&
+                 newTop + btnMau.offsetHeight > enggaRect.top - buffer &&
+                 newTop < enggaRect.bottom + buffer) &&
+                attempts < 10
+              );
+
+              // Jika masih overlap setelah 10 attempts, pindah ke posisi default jauh
+              if (attempts >= 10) {
+                newLeft = viewportWidth * 0.1; // 10% dari kiri
+                newTop = viewportHeight * 0.1; // 10% dari atas
+              }
+
+              // Set posisi baru dengan transition cepat
+              btnMau.style.transition = 'left 0.1s ease, top 0.1s ease';
+              btnMau.style.left = (newLeft / viewportWidth * 100) + '%';
+              btnMau.style.top = (newTop / viewportHeight * 100) + '%';
+
+              // Terus bergerak selama mouse masih di atas tombol
+              setTimeout(() => {
+                if (btnMau.matches(':hover')) {
+                  moveAway();
+                } else {
+                  isMoving = false;
+                }
+              }, 100); // Interval cepat 100ms
+            };
+            moveAway();
+          });
+
+          // Mencegah klik dengan pointer-events none saat bergerak
+          btnMau.addEventListener('click', function(e) {
+            if (isMoving) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          });
+
+          clearInterval(interval);
+        }
+      }, 500);
+    });
+  </script>
+
+    <!-- Auto-hide adaptif untuk #pesanditolak dan #pesan9 -->
+<script>
+(function () {
+  'use strict';
+
+  // ======= Pengaturan (ubah jika mau) =======
+  // Per kata, berapa ms yang dialokasikan (sesuaikan sensitifitas durasi)
+  const MS_PER_WORD = 500;   // 500 ms per kata -> lebih lama lagi untuk membaca nyaman
+  const BASE_MS = 1500;      // tambahan dasar agar teks sangat pendek tetap terbaca
+  const MIN_VISIBLE_MS = 2000; // minimal 2 detik
+  const MAX_VISIBLE_MS = 8000; // maksimal 8 detik (lebih lama lagi agar tidak terlalu cepat hilang)
+  const FADE_MS = 400;         // durasi fade-out (ms)
+  // =========================================
+
+  // Helper: clamp
+  function clamp(val, a, b) { return Math.max(a, Math.min(b, val)); }
+
+  // Hitung durasi layak berdasarkan teks
+  function computeDurationFromText(text) {
+    if (!text) return MIN_VISIBLE_MS;
+    const words = (text.trim().split(/\s+/).filter(Boolean)).length || 1;
+    const computed = Math.round(words * MS_PER_WORD + BASE_MS);
+    return clamp(computed, MIN_VISIBLE_MS, MAX_VISIBLE_MS);
+  }
+
+  // Fade out lalu set display none
+  function hideWithFade(el, fadeMs = FADE_MS) {
+    if (!el) return;
+    // set transition jika belum ada
+    if (!el.__hasAutoHideTransition) {
+      const prev = el.style.transition || '';
+      el.style.transition = `opacity ${fadeMs}ms ease` + (prev ? `, ${prev}` : '');
+      el.__hasAutoHideTransition = true;
+    }
+    // mulai fade
+    el.style.opacity = '0';
+    // setelah selesai fade, sembunyikan elemen dari layout
+    clearTimeout(el.__autoHideCleanupTimer);
+    el.__autoHideCleanupTimer = setTimeout(() => {
+      // hanya set display none jika masih opacity 0 (tidak diganggu)
+      if (getComputedStyle(el).opacity === '0') el.style.display = 'none';
+    }, fadeMs + 50);
+  }
+
+  // Pastikan elemen terlihat lalu atur auto-hide berdasar panjang teksnya
+  function ensureVisibleThenAutoHide(el) {
+    if (!el) return;
+    // Jika saat ini display:none, tampilkan sementara
+    if (getComputedStyle(el).display === 'none') {
+      el.style.display = '';   // biarkan CSS default (atau inline) menentukan tipe display
+      // paksa reflow agar transition opacity bekerja
+      el.style.opacity = '0';
+      void el.offsetWidth;
+      el.style.transition = el.style.transition || `opacity ${FADE_MS}ms ease`;
+      el.style.opacity = '1';
+    } else {
+      // Jika tampil tapi opacity 0, set ke 1
+      if (parseFloat(getComputedStyle(el).opacity || '1') === 0) {
+        el.style.opacity = '1';
+      }
+    }
+
+    // Reset timer bila ada
+    if (el.__autoHideTimer) {
+      clearTimeout(el.__autoHideTimer);
+    }
+
+    // Hitung durasi berdasarkan isi teks (innerText lebih baik untuk menghitung kata)
+    const text = el.innerText || el.textContent || '';
+    const dur = computeDurationFromText(text);
+
+    el.__autoHideTimer = setTimeout(() => hideWithFade(el), dur);
+  }
+
+  // Pasang observer untuk memantau perubahan style/class/teks
+  function watchElementForShow(el) {
+    if (!el) return;
+    // Jika sudah terlihat saat init, jadwalkan auto-hide sekarang
+    const cs = getComputedStyle(el);
+    if (cs.display !== 'none' && cs.visibility !== 'hidden' && parseFloat(cs.opacity || '1') > 0) {
+      ensureVisibleThenAutoHide(el);
+    }
+
+    // Observers:
+    // 1) attribute changes (style/class)
+    const attrObs = new MutationObserver(() => {
+      const st = getComputedStyle(el);
+      if (st.display !== 'none' && st.visibility !== 'hidden' && parseFloat(st.opacity || '1') > 0) {
+        ensureVisibleThenAutoHide(el);
+      }
+    });
+    attrObs.observe(el, { attributes: true, attributeFilter: ['style', 'class'] });
+
+    // 2) jika teks anak berubah (mis. elemen diisi/dikosongkan oleh script lain)
+    const textObs = new MutationObserver(() => {
+      const st = getComputedStyle(el);
+      if (st.display !== 'none' && st.visibility !== 'hidden' && parseFloat(st.opacity || '1') > 0) {
+        ensureVisibleThenAutoHide(el);
+      }
+    });
+    textObs.observe(el, { childList: true, subtree: true, characterData: true });
+
+    // Simpan observer references (tidak wajib, tapi memudahkan debugging)
+    el.__autoHideObservers = el.__autoHideObservers || [];
+    el.__autoHideObservers.push(attrObs, textObs);
+  }
+
+  // MAIN
+  document.addEventListener('DOMContentLoaded', function () {
+    const kotakDitolak = document.getElementById('pesanditolak'); // wrapper "Yaudah sii kalo ga mau..."
+    const pesan9 = document.getElementById('pesan9');            // teks "Oh iya, kakak jangan lupain..."
+
+    // Pasang watch pada kedua elemen
+    watchElementForShow(kotakDitolak);
+    watchElementForShow(pesan9);
+
+    // Jaga agar jika ada pemanggilan manual untuk menampilkan, bisa dipicu:
+    // contoh: window.showAutoHide('#pesanditolak') -> akan tampil dan auto-hide
+    window.showAutoHide = function (selectorOrEl) {
+      let el = typeof selectorOrEl === 'string' ? document.querySelector(selectorOrEl) : selectorOrEl;
+      if (!el) return;
+      // Tampilkan dan jadwalkan
+      el.style.display = '';
+      void el.offsetWidth;
+      el.style.opacity = '1';
+      ensureVisibleThenAutoHide(el);
+    };
+
+    // Opsional: jika kamu ingin debug, aktifkan baris berikut:
+    // console.log('Auto-hide adaptif siap. MS_PER_WORD=', MS_PER_WORD);
+  });
+
+})();
+</script>
+
+  <!-- Sampai Sini -->
+</body>
+</html>
